@@ -8,7 +8,6 @@ class RegisterScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white.withValues(alpha: 0.95),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Center(
@@ -20,8 +19,7 @@ class RegisterScreen extends StatelessWidget {
                 children: [
                   Text(
                     'Create an Account',
-                    style: GoogleFonts.getFont(
-                      'Lato',
+                    style: GoogleFonts.lato(
                       color: Colors.black,
                       fontWeight: FontWeight.bold,
                       letterSpacing: 0.2,
@@ -30,8 +28,7 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   Text(
                     'To Explore the World of Exclusives',
-                    style: GoogleFonts.getFont(
-                      'Lato',
+                    style: GoogleFonts.lato(
                       color: Colors.black,
                       fontSize: 14,
                       letterSpacing: 0.2,
@@ -46,8 +43,7 @@ class RegisterScreen extends StatelessWidget {
                     alignment: Alignment.topLeft,
                     child: Text(
                       'Full Name',
-                      style: GoogleFonts.getFont(
-                        'Nunito Sans',
+                      style: GoogleFonts.nunitoSans(
                         fontWeight: FontWeight.w600,
                         letterSpacing: 0.2,
                       ),
@@ -70,8 +66,7 @@ class RegisterScreen extends StatelessWidget {
                       focusedBorder: InputBorder.none,
                       enabledBorder: InputBorder.none,
                       labelText: 'Enter your name',
-                      labelStyle: GoogleFonts.getFont(
-                        'Nunito Sans',
+                      labelStyle: GoogleFonts.nunitoSans(
                         fontSize: 14,
                         letterSpacing: 0.1,
                       ),
@@ -90,8 +85,7 @@ class RegisterScreen extends StatelessWidget {
                     alignment: Alignment.topLeft,
                     child: Text(
                       'Email',
-                      style: GoogleFonts.getFont(
-                        'Nunito Sans',
+                      style: GoogleFonts.nunitoSans(
                         fontWeight: FontWeight.w600,
                         letterSpacing: 0.2,
                       ),
@@ -114,8 +108,7 @@ class RegisterScreen extends StatelessWidget {
                       focusedBorder: InputBorder.none,
                       enabledBorder: InputBorder.none,
                       labelText: 'Enter your email',
-                      labelStyle: GoogleFonts.getFont(
-                        'Nunito Sans',
+                      labelStyle: GoogleFonts.nunitoSans(
                         fontSize: 14,
                         letterSpacing: 0.1,
                       ),
@@ -147,8 +140,7 @@ class RegisterScreen extends StatelessWidget {
                       focusedBorder: InputBorder.none,
                       enabledBorder: InputBorder.none,
                       labelText: 'Enter your password',
-                      labelStyle: GoogleFonts.getFont(
-                        'Nunito Sans',
+                      labelStyle: GoogleFonts.nunitoSans(
                         fontSize: 14,
                         letterSpacing: 0.1,
                       ),
@@ -262,8 +254,7 @@ class RegisterScreen extends StatelessWidget {
                           Center(
                             child: Text(
                               'Sign Up',
-                              style: GoogleFonts.getFont(
-                                'Lato',
+                              style: GoogleFonts.lato(
                                 color: Colors.white,
                                 fontSize: 18,
                                 fontWeight: FontWeight.bold,
@@ -285,7 +276,7 @@ class RegisterScreen extends StatelessWidget {
                       SizedBox(width: 5),
                       InkWell(
                         onTap: () {
-                          Navigator.push(
+                          Navigator.pushReplacement(
                             context,
                             MaterialPageRoute(
                               builder: (context) {
