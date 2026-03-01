@@ -2,7 +2,6 @@ import 'package:kurskart/global_variables.dart';
 import 'package:kurskart/models/user.dart';
 import 'package:http/http.dart' as http;
 import 'package:kurskart/services/manage_http_response.dart';
-import '../services/manage_http_response.dart';
 
 class AuthController {
   Future<void> signUpUsers({
