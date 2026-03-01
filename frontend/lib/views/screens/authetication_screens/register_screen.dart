@@ -1,9 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:kurskart/controllers/auth_controller.dart';
 import 'package:kurskart/views/screens/authetication_screens/login_screen.dart';
 
 class RegisterScreen extends StatelessWidget {
   final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
+
+  final AuthController _authController = AuthController();
+
+  late String fullName;
+  late String email;
+  late String password;
 
   @override
   Widget build(BuildContext context) {
@@ -50,6 +57,9 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ),
                   TextFormField(
+                    onChanged: (value) {
+                      fullName = value;
+                    },
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Enter your name";
@@ -92,6 +102,9 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ),
                   TextFormField(
+                    onChanged: (value) {
+                      email = value;
+                    },
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Enter your email";
@@ -124,6 +137,9 @@ class RegisterScreen extends StatelessWidget {
                   ),
                   SizedBox(height: 20),
                   TextFormField(
+                    onChanged: (value) {
+                      password = value;
+                    },
                     validator: (value) {
                       if (value!.isEmpty) {
                         return "Enter your password";
@@ -156,12 +172,15 @@ class RegisterScreen extends StatelessWidget {
                     ),
                   ),
                   SizedBox(height: 20),
-                  InkWell(
-                    onTap: () {
+                  GestureDetector(
+                    onTap: () async {
                       if (_formKey.currentState!.validate()) {
-                        print("corrent");
-                      } else {
-                        print("failed");
+                        await _authController.signUpUsers(
+                          context: context,
+                          email: email,
+                          fullName: fullName,
+                          password: password,
+                        );
                       }
                     },
                     child: Container(
@@ -274,7 +293,7 @@ class RegisterScreen extends StatelessWidget {
                         style: GoogleFonts.roboto(fontWeight: FontWeight.w500),
                       ),
                       SizedBox(width: 5),
-                      InkWell(
+                      GestureDetector(
                         onTap: () {
                           Navigator.pushReplacement(
                             context,
